@@ -55,7 +55,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose, onRate, o
              className="max-w-full max-h-full object-contain drop-shadow-2xl"
            />
            <div className="absolute bottom-4 left-4 bg-red-600 text-yellow-100 text-xs px-2 py-1 rounded shadow border border-yellow-400">
-              Hàng Tết Chất Lượng
+              sản phẩn chất lượng
            </div>
         </div>
 

@@ -42,9 +42,9 @@ const OrderModal: React.FC<OrderModalProps> = ({ product, onClose, onSubmit, isS
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input required type="text" placeholder="Họ và tên" className="w-full bg-red-950/50 border border-yellow-500/30 rounded-xl px-4 py-3 text-yellow-100 focus:outline-none focus:border-yellow-400 transition-colors placeholder-yellow-100/20" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-              <input required type="tel" placeholder="SĐT liên hệ" className="w-full bg-red-950/50 border border-yellow-500/30 rounded-xl px-4 py-3 text-yellow-100 focus:outline-none focus:border-yellow-400 transition-colors placeholder-yellow-100/20" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+              <input required type="tel" placeholder="SĐT" className="w-full bg-red-950/50 border border-yellow-500/30 rounded-xl px-4 py-3 text-yellow-100 focus:outline-none focus:border-yellow-400 transition-colors placeholder-yellow-100/20" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
           </div>
-          <textarea required rows={2} placeholder="Địa chỉ giao hàng (Số nhà, đường...)" className="w-full bg-red-950/50 border border-yellow-500/30 rounded-xl px-4 py-3 text-yellow-100 focus:outline-none focus:border-yellow-400 transition-colors resize-none placeholder-yellow-100/20" value={formData.address} onChange={e => setFormData({...formData, address: e.target.value})} />
+          <textarea required rows={2} placeholder="Địa chỉ giao hàng (vị trí nào trong trường)" className="w-full bg-red-950/50 border border-yellow-500/30 rounded-xl px-4 py-3 text-yellow-100 focus:outline-none focus:border-yellow-400 transition-colors resize-none placeholder-yellow-100/20" value={formData.address} onChange={e => setFormData({...formData, address: e.target.value})} />
 
           <div className="p-4 bg-red-900/40 border border-yellow-500/30 rounded-xl">
             <div className="flex justify-between items-center mb-4">
@@ -56,13 +56,13 @@ const OrderModal: React.FC<OrderModalProps> = ({ product, onClose, onSubmit, isS
                </div>
             </div>
             <div className="flex justify-between items-center pt-4 border-t border-yellow-500/20">
-               <span className="text-yellow-200">Tổng thanh toán:</span>
+               <span className="text-yellow-200">Tổng tiền:</span>
                <span className="text-2xl font-bold text-yellow-400 text-glow">{new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(totalPrice)}</span>
             </div>
           </div>
 
           <button type="submit" disabled={isSubmitting} className="w-full py-4 rounded-xl font-bold text-lg text-red-900 bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-400 hover:to-yellow-300 shadow-lg transform transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2">
-            {isSubmitting ? 'Đang xử lý...' : 'XÁC NHẬN ĐẶT HÀNG'}
+            {isSubmitting ? 'Đang xử lý...' : 'ĐẶT HÀNG'}
           </button>
         </form>
       </div>

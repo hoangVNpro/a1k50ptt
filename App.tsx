@@ -192,7 +192,7 @@ const App: React.FC = () => {
               <h1 className="text-4xl md:text-5xl font-header font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-300 text-glow drop-shadow-md">
                 A1K50
               </h1>
-              <p className="text-lg font-tet text-yellow-400 tracking-wider">🌸 Chúc Mừng Năm Mới 2025 🌸</p>
+              <p className="text-lg font-tet text-yellow-400 tracking-wider">🌸 Chúc Mừng Năm Mới 2026 🌸</p>
             </div>
           </div>
 
@@ -204,7 +204,7 @@ const App: React.FC = () => {
               : 'bg-red-900/80 border-yellow-500/50 text-yellow-300 hover:bg-red-800 backdrop-blur'
             }`}
           >
-            {isAdminMode ? <><i className="fas fa-store"></i> Xem Cửa Hàng</> : <><i className="fas fa-crown"></i> Quản Trị Viên</>}
+            {isAdminMode ? <><i className="fas fa-store"></i> Xem Cửa Hàng</> : <><i className="fas fa-crown"></i> trang quả lý</>}
           </button>
         </header>
 
@@ -215,12 +215,12 @@ const App: React.FC = () => {
             {/* Add Product */}
             <div className="glass-panel rounded-3xl p-6 md:p-8 max-w-2xl mx-auto border-yellow-500/30">
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-yellow-300 font-header">
-                <i className="fas fa-plus-circle"></i> Nhập Hàng Tết
+                <i className="fas fa-plus-circle"></i> Sản phẩm
               </h2>
               <form onSubmit={handleAddProduct} className="space-y-4">
                 <input 
                   type="text" 
-                  placeholder="Tên sản phẩm (VD: Hộp Quà Tết...)"
+                  placeholder="Tên sản phẩm:"
                   className="w-full bg-red-900/40 border border-yellow-500/20 rounded-xl p-4 focus:border-yellow-400 outline-none transition-colors text-yellow-100 placeholder-yellow-100/30"
                   value={newProduct.name}
                   onChange={e => setNewProduct({...newProduct, name: e.target.value})}
@@ -228,7 +228,7 @@ const App: React.FC = () => {
                 <div className="flex flex-col md:flex-row gap-4">
                    <input 
                     type="number" 
-                    placeholder="Giá (VNĐ)"
+                    placeholder="Giá"
                     className="flex-1 bg-red-900/40 border border-yellow-500/20 rounded-xl p-4 focus:border-yellow-400 outline-none transition-colors text-yellow-100 placeholder-yellow-100/30"
                     value={newProduct.price}
                     onChange={e => setNewProduct({...newProduct, price: e.target.value})}
@@ -241,7 +241,7 @@ const App: React.FC = () => {
                   />
                 </div>
                 <textarea 
-                  placeholder="Mô tả chi tiết sản phẩm..."
+                  placeholder="thông tin sản phẩm..."
                   className="w-full bg-red-900/40 border border-yellow-500/20 rounded-xl p-4 focus:border-yellow-400 outline-none transition-colors h-32 resize-none text-yellow-100 placeholder-yellow-100/30"
                   value={newProduct.description}
                   onChange={e => setNewProduct({...newProduct, description: e.target.value})}
@@ -250,7 +250,7 @@ const App: React.FC = () => {
                   disabled={uploading}
                   className="w-full bg-gradient-to-r from-yellow-600 to-yellow-500 text-red-950 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all disabled:opacity-50"
                 >
-                  {uploading ? 'Đang tải lên...' : 'ĐĂNG BÁN NGAY'}
+                  {uploading ? 'Đang tải lên...' : 'BÁN'}
                 </button>
               </form>
             </div>
@@ -270,12 +270,12 @@ const App: React.FC = () => {
                       <th className="p-4">SL</th>
                       <th className="p-4">Tổng tiền</th>
                       <th className="p-4">Trạng thái</th>
-                      <th className="p-4 text-center">Hành động</th>
+                      <th className="p-4 text-center">xác nhận</th>
                     </tr>
                   </thead>
                   <tbody>
                     {orders.length === 0 ? (
-                      <tr><td colSpan={7} className="p-8 text-center text-yellow-500/40 italic">Chưa có đơn hàng nào.</td></tr>
+                      <tr><td colSpan={7} className="p-8 text-center text-yellow-500/40 italic">ko có đơn hàng nào.</td></tr>
                     ) : (
                       orders.map(order => (
                         <tr key={order.id} className="border-b border-yellow-500/10 hover:bg-yellow-500/5 transition-colors">
@@ -309,7 +309,7 @@ const App: React.FC = () => {
               </div>
             ) : products.length === 0 ? (
                 <div className="col-span-full text-center py-20 text-yellow-500/50 italic">
-                  Chưa có sản phẩm nào.
+                  ko có sản phẩm nào.
                 </div>
             ) : (
               products.map((product) => (
